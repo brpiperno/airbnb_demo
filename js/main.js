@@ -5,7 +5,7 @@ const btnCancel = document.querySelector("#button-cancel");
 
 
 
-inTitle.value = "Ben edited this!";
+inTitle.value = "Ben edited this! Edited Again";
 inPrice.value = 123;
 inDescription.value = "enter description here!";
 
