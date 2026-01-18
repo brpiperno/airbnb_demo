@@ -1,6 +1,6 @@
-# Sample Airbnb Listings – Static JavaScript Project
+# Airbnb Listings – Static JavaScript Project
 
-A lightweight, front‑end–only demo that showcases sample Airbnb‑style property listings using plain JavaScript, HTML, and CSS. This project is ideal for learning how to structure static data, render dynamic UI elements, and simulate a simple listings interface without a backend.
+A lightweight, front‑end–only demo that showcases sample Airbnb property listings in the SF area using plain JavaScript, HTML, and CSS. This project was an opportunity to learn how to structure HTML, CSS, and JavaScript elements together using Bootstrap to create multiple dynamic UI elements in the form of a listings page.
 
 ## 🚀 Features
 
@@ -11,13 +11,15 @@ A lightweight, front‑end–only demo that showcases sample Airbnb‑style prop
 - Zero dependencies — runs in any modern browser
 
 ## 📁 Project Structure
+```
 /project-root
-│── index.html         # Main entry point
+│── index.html         # Main entry point and contains the listings specified
+│── about.html         # Webpage about the listings
 │── styles.css         # Basic styling for layout and cards
 │── data.js            # Static sample listings
 │── app.js             # Rendering logic and DOM manipulation
-└── assets/           # Images or icons (optional)
-
+└── assets/           # Images or icons
+```
 
 ## 🧠 How It Works
 
@@ -45,9 +47,9 @@ You can extend the project by:
 
 ## 📄 License
 
-This project is provided for educational and demonstration purposes. Use and modify freely.
+This project is provided for educational and demonstration purposes per MIT license.
 
 
 ## AI Usage
-This README was generated using microsoft copilot with the following prompt:
+This README was initially generated using microsoft copilot with the following prompt then modified manually:
 ```Write an infomative yet concise README file for a static JavaScript project showing sample Airbnb listings```
