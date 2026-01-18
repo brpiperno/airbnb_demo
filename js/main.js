@@ -34,51 +34,41 @@ function fetchListings() {
 }
 
 fetchListings()
-    .then(listings => listings.forEach(task => createTaskCard(task)))
+    .then(listings => listings.reverse().forEach(task => createTaskCard(task)))
     .catch(error => { console.error(error) });
 
 
 let cardContainer = document.getElementById('card-container');
 
 let createTaskCard = listing => {
-    let card = document.createElement('article');
-    card.className = 'card';
+    const col = document.createElement('div');
+    col.className = 'col-12';
+    col.innerHTML = `
+      <div class="listing col-lg-6 col-md-6 col-sm-12">
+          <article class="card">
+              <img src="${listing.picture_url}" alt="${listing.name}" />
+    					<div class="host-wrapper">
+  							<img class="host-thumbnail" src="${listing.host_thumbnail_url}" alt="thumbnail of host ${listing.host_name}"/>
+    						<div class="host-name"> Hosted by ${listing.host_name}</div>
+    					</div>
+    					
+              <div class="card-body">
+                  <h3> ${listing.name} </h3>
+                  
+                  <div class="price">${listing.price}</div>
+                  <div class="description overflow-auto" style="max-height: 180px">
+                      ${listing.description}
 
-    let image = document.createElement('img');
-    image.className = 'card-img-top';
-    image.src = listing.picture_url;
-    image.alt=listing.name;
+    									<br><br><strong>Amenities Include:</strong><br>
+    									${listing.amenities}
+                  </div>
+    							<div class="amenities">
 
+    							</div>
+              </div>
+          </article>
+      </div>
+    `;
+    cardContainer.appendChild(col);
 
-
-    let cardBody = document.createElement('div');
-    cardBody.className = 'card-body';
-
-    let listingName = document.createElement('h5');
-    listingName.innerText = listing.name;
-    listingName.className = 'card-title';
-
-    let host = document.createElement('div');
-    host.className = 'card-host';
-    host.innerText = listing.host_name;
-
-    let hostImage = document.createElement('img');
-    hostImage.className = 'card-img-top';
-    hostImage.src = listing.host_picture_url;
-
-    let price = document.createElement('div');
-    price.innerText = listing.price;
-
-    let description = document.createElement('div');
-    description.innerText = listing.description;
-    description.className = 'card-description';
-
-    cardBody.appendChild(listingName);
-    cardBody.appendChild(description);
-    cardBody.appendChild(image);
-    cardBody.appendChild(host);
-    cardBody.appendChild(hostImage);
-    cardBody.appendChild(price);
-    card.appendChild(cardBody);
-    cardContainer.appendChild(card);
 }
